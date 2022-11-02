@@ -8,7 +8,7 @@ Rename `.env.local.example` to `.env.local` and update the value of `SPREADSHEET
 
 For this demo the follwing spreadsheet was used:
 
-<img src="/assets/google-sheet-example.jpg" alt="Google sheets exampl" title="Google sheets exampl"
+<img src="/assets/google-sheet-example.jpg" alt="Google sheets example" title="Google sheets example" />
 
 ## Start application
 
