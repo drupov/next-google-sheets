@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { google } from 'googleapis'
 
 export async function getServerSideProps() {
@@ -13,7 +14,7 @@ export async function getServerSideProps() {
   });
 
   let players = response.data.values
-  const foo = players.shift()
+  players.shift()
 
   return {
     props: {
@@ -24,11 +25,18 @@ export async function getServerSideProps() {
 
 function Players({players}) {
   return <ul>
-    {players.map(player => {
-      const [firstName, lastName, position, rating] = player
+    {players.map((player, i) => {
+      const lastName = player[1]
+      const id = i + 1
+      const link = `/players/${id}`
+
       return (
         <>
-          <li key={firstName}>{firstName} {lastName}, {position}: {rating}</li>
+          <li key={id}>
+            <Link href={link}>
+              {lastName}
+            </Link>
+          </li>
         </>
       )
     })}
